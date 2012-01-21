@@ -1,18 +1,19 @@
 %define         _state          stable
-%define         orgname         okular
+%define         orgname         blinken
 #
 Summary:	KDE version of the well-known game Simon Says
 Summary(pl.UTF-8):	Wersja KDE dobrze znanej gry "Simon Says"
-Name:		blinken
-Version:	4.7.3
+Name:		kde4-blinken
+Version:	4.8.0
 Release:	1
 License:	LGPL
 Group:		X11/Applications/Science
-Source0:	ftp://ftp.kde.org/pub/kde/stable/%{version}/src/%{name}-%{version}.tar.bz2
-# Source0-md5:	dd0201138f84f0dc332f9b8a5bea49e9
+Source0:	ftp://ftp.kde.org/pub/kde/stable/%{version}/src/%{orgname}-%{version}.tar.bz2
+# Source0-md5:	0dba841a998fec4ada7fbf068d0c38b0
 URL:		http://www.kde.org/
 BuildRequires:	kde4-kdelibs-devel >= %{version}
 Obsoletes:	kde4-kdeedu-blinken < 4.6.99
+Obsoletes:	blinken < 4.8.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -22,7 +23,7 @@ KDE version of the well-known game Simon Says.
 Wersja KDE dobrze znanej gry "Simon Says".
 
 %prep
-%setup -q
+%setup -q -n %{orgname}-%{version}
 
 %build
 install -d build
@@ -46,7 +47,7 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} -C build install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-%find_lang %{name} --with-kde
+%find_lang %{orgname} --with-kde
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -54,7 +55,7 @@ rm -rf $RPM_BUILD_ROOT
 %post	-p /sbin/ldconfig
 %postun	-p /sbin/ldconfig
 
-%files -f %{name}.lang
+%files -f %{orgname}.lang
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/blinken
 %{_desktopdir}/kde4/blinken.desktop
