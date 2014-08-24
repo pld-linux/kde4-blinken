@@ -4,12 +4,12 @@
 Summary:	KDE version of the well-known game Simon Says
 Summary(pl.UTF-8):	Wersja KDE dobrze znanej gry "Simon Says"
 Name:		kde4-blinken
-Version:	4.13.2
+Version:	4.14.0
 Release:	1
 License:	LGPL
 Group:		X11/Applications/Science
-Source0:	ftp://ftp.kde.org/pub/kde/stable/%{version}/src/%{orgname}-%{version}.tar.xz
-# Source0-md5:	0155dc9d727da46e105b8c04c62180c2
+Source0:	http://download.kde.org/stable/%{version}/src/%{orgname}-%{version}.tar.xz
+# Source0-md5:	f6ca48cfa4d97df2b686a8a2679499d0
 URL:		http://www.kde.org/
 BuildRequires:	kde4-kdelibs-devel >= %{version}
 Obsoletes:	kde4-kdeedu-blinken < 4.6.99
@@ -59,6 +59,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/blinken
 %{_desktopdir}/kde4/blinken.desktop
+%{_datadir}/appdata/blinken.appdata.xml
 %{_datadir}/apps/blinken
 %{_datadir}/config.kcfg/blinken.kcfg
 %{_iconsdir}/*/*/apps/blinken.*
