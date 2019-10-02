@@ -5,7 +5,7 @@ Summary:	KDE version of the well-known game Simon Says
 Summary(pl.UTF-8):	Wersja KDE dobrze znanej gry "Simon Says"
 Name:		kde4-blinken
 Version:	4.14.3
-Release:	1
+Release:	2
 License:	LGPL
 Group:		X11/Applications/Science
 Source0:	http://download.kde.org/stable/%{version}/src/%{orgname}-%{version}.tar.xz
